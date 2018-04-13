@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "MainHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid objWebGrid = new WebGrid(null);
+
+    //objWebGrid.Columns(new WebGridColumn() { Header = "Name",Style= "table" }, new WebGridColumn() { Header = "Address", Style = "table" });
+}
+<div class="container">
+    <h2>MainHome</h2>
+    <div class="row">
+        <div class="table-bordered">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Addres</td>
+                        <td>Contact No</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+    <div id="ModalContent" class="row">
+        
+    </div>
+</div>
+<script src="~/Scripts/CommonCurve.js"/>
+
