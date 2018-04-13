@@ -28,6 +28,13 @@
             document.getElementById("txtName").style.borderBottomColor = "red";
         else
             document.getElementById("txtName").style.borderBottomColor = "";
+
+        var txtAddress = document.getElementById("txtAddress").value;
+        if (txtAddress.length == 0)
+            document.getElementById("txtAddress").style.borderBottomColor = "red";
+        else
+            document.getElementById("txtAddress").style.borderBottomColor = "";
+
     }
     ,
     ClearAll: function () {
