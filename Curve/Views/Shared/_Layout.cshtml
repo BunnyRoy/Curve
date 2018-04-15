@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+   
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -26,7 +27,7 @@
                     <li>
                         <button class="btn"
                                 onclick="MainCureve.OpenPopUp(this)"
-                                style="background-color: white;border: none;color: black;padding-top:18px;margin:10px; font-size: 16px;cursor: pointer;">
+                                style="background-color: white;border: none;color: black;padding-top:18px;margin:10px; font-size: 16px;cursor: pointer">
                             <i class="glyphicon glyphicon-plus"></i>
                         </button>
                     </li>
@@ -45,9 +46,32 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    <script src="~/Scripts/CommonCurve.js" />
+
     @*@Scripts.Render("~/bundles/jquery")*@
     @*@Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/CommonCurve.js"</script>
+    @*<script>
+         function OpenPopUp (element) {
+            debugger
+            $.ajax(
+                {
+                    type: "GET",
+                    url: "/Main/RedirectToContent",
+                    contentType: "application/json; charset=utf-8",
+                    cache: false,
+                    data: {},
+                    success: function (html) {
+                        debugger;
+                        $("#ModalContent").append(html);
+                        $('#myModal').modal('show');
+                    },
+                    error: function () {
+                        debugger;
+                        alert("Dynamic content load failed.");
+                    }
+                });
+        }
+    </script>*@
 </body>
 </html>
