@@ -24,16 +24,27 @@
     OnLeave: function (element) {
         debugger;
         var txtNameValue = document.getElementById("txtName").value;
-        if (txtNameValue.length == 0)
-            document.getElementById("txtName").style.borderBottomColor = "red";
-        else
-            document.getElementById("txtName").style.borderBottomColor = "";
+        var elements = document.querySelectorAll('input[type=text]');
+        for (var i = 0; i < elements.length; i++) {
+            if (elements[i].type == "text") {
 
-        var txtAddress = document.getElementById("txtAddress").value;
-        if (txtAddress.length == 0)
-            document.getElementById("txtAddress").style.borderBottomColor = "red";
-        else
-            document.getElementById("txtAddress").style.borderBottomColor = "";
+                if (elements[i].value.length == 0) {
+                    elements[i].style.borderBottomColor = "red";
+                } else {
+                    elements[i].style.borderBottomColor = "";
+                }
+            }
+        }
+        ////if (txtNameValue.length == 0)
+        ////    document.getElementById("txtName").style.borderBottomColor = "red";
+        ////else
+        ////    document.getElementById("txtName").style.borderBottomColor = "";
+
+        ////var txtAddress = document.getElementById("txtAddress").value;
+        ////if (txtAddress.length == 0)
+        ////    document.getElementById("txtAddress").style.borderBottomColor = "red";
+        ////else
+        ////    document.getElementById("txtAddress").style.borderBottomColor = "";
 
     }
     ,
