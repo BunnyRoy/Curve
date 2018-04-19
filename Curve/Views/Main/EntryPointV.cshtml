@@ -37,11 +37,32 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-6">
+                    <label class="form-control">Profession</label>
+                </div>
+                <div class="col-lg-6">
+                    @{
+                        List<SelectListItem> lst = new List<SelectListItem>();
+                        lst.Add(new SelectListItem() { Text = "Engineer", Value = "1" });
+                        lst.Add(new SelectListItem() { Text = "Doctors", Value = "2" });
+                    }
+                    @Html.DropDownList("cmbProfession", lst, new { @id = "dropPrfession", @class = "form-control",@onchange= "MainCureve.OnLeave(this)" });
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label class="form-control">Date of enrollment</label>
+                </div>
+                <div class="col-lg-6">
+                    <h1>@Html.Display("zohair")</h1>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-12">
                     <input type="button" value="Save" class="btn pull-right" />
                 </div>
             </div>
-        }
+                        }
 
     </div>
 
